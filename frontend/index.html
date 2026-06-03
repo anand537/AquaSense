@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSense - Understand the Future of Water</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <div class="scroll-container">
+        <!-- SECTION 1: Hero/Mountain Scene with Title -->
+        <section class="hero-section" id="hero">
+            <svg class="background-sky" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <radialGradient id="skyGradient" cx="50%" cy="30%">
+                        <stop offset="0%" style="stop-color:#1a2847;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0d1620;stop-opacity:1" />
+                    </radialGradient>
+                    <filter id="cloudFilter">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="2" />
+                        <feDisplacementMap in="SourceGraphic" scale="80" />
+                    </filter>
+                </defs>
+                
+                <!-- Sky Background -->
+                <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+                
+                <!-- Clouds -->
+                <g filter="url(#cloudFilter)" opacity="0.6">
+                    <ellipse cx="200" cy="150" rx="300" ry="120" fill="#2a3f5f"/>
+                    <ellipse cx="600" cy="200" rx="400" ry="150" fill="#243448"/>
+                    <ellipse cx="1200" cy="120" rx="350" ry="100" fill="#2a3f5f"/>
+                    <ellipse cx="1700" cy="250" rx="380" ry="140" fill="#243448"/>
+                </g>
+                
+                <!-- Mountains -->
+                <defs>
+                    <linearGradient id="mountainGradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#546e8f;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#1a2847;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="mountainGradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#6b8fb5;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#2a3f5f;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Back Mountains -->
+                <polygon points="0,900 400,200 800,950" fill="url(#mountainGradient1)" opacity="0.7"/>
+                <polygon points="600,950 1200,150 1800,950" fill="url(#mountainGradient2)" opacity="0.8"/>
+                <polygon points="1400,900 1900,250 2300,950" fill="url(#mountainGradient1)" opacity="0.7"/>
+                
+                <!-- Front Mountains with Snow Caps -->
+                <polygon points="0,1080 300,400 600,1080" fill="#3d5577"/>
+                <polygon points="200,450 320,350 280,470" fill="#e8e8e8"/>
+                
+                <polygon points="500,1080 1000,200 1500,1080" fill="#4a6691"/>
+                <polygon points="900,350 1050,150 1050,360" fill="#f0f0f0"/>
+                
+                <polygon points="1400,1080 1800,350 2200,1080" fill="#3d5577"/>
+                <polygon points="1700,420 1850,280 1800,440" fill="#e8e8e8"/>
+            </svg>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">AquaSense</h1>
+                <p class="hero-tagline">Understand the Future of Water</p>
+                <p class="hero-description">Explore intelligent water quality prediction powered by machine learning</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: River Valley with Houses (Models) -->
+        <section class="river-valley-section" id="models">
+            <div class="valley-background">
+                <svg class="valley-svg" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <linearGradient id="valleyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1a2847;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#2d4066;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3d5577;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="riverGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#1e5a96;stop-opacity:0.9" />
+                            <stop offset="50%" style="stop-color:#2a7fb5;stop-opacity:0.95" />
+                            <stop offset="100%" style="stop-color:#1e5a96;stop-opacity:0.9" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <rect width="1920" height="1200" fill="url(#valleyGradient)"/>
+                    
+                    <!-- Valley slopes -->
+                    <polygon points="0,400 300,600 600,400" fill="#2a3f5f" opacity="0.5"/>
+                    <polygon points="1320,400 1620,600 1920,400" fill="#2a3f5f" opacity="0.5"/>
+                    
+                    <!-- River curves -->
+                    <path d="M 960,150 Q 800,350 960,550 Q 1100,750 800,950" 
+                          stroke="url(#riverGradient)" stroke-width="120" fill="none" stroke-linecap="round"/>
+                    
+                    <!-- River shimmer effect -->
+                    <path d="M 960,150 Q 800,350 960,550 Q 1100,750 800,950" 
+                          stroke="#4db8ff" stroke-width="40" fill="none" stroke-linecap="round" opacity="0.3"/>
+                    <path d="M 960,150 Q 800,350 960,550 Q 1100,750 800,950" 
+                          stroke="#6eccff" stroke-width="15" fill="none" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+            </div>
+            
+            <div class="models-container">
+                <h2 class="section-title">Water Quality Prediction Models</h2>
+                
+                <!-- House/Model 1 (Left) -->
+                <div class="house-button house-1" data-model="model_1">
+                    <svg class="house-svg" viewBox="0 0 300 350" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="houseGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b6f47;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#5d4e37;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="roofGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#404040;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Roof -->
+                        <polygon points="50,90 150,20 250,90" fill="url(#roofGrad1)"/>
+                        <polygon points="50,90 150,20 250,90" stroke="#0a0a0a" stroke-width="2" fill="none"/>
+                        
+                        <!-- Chimney -->
+                        <rect x="130" y="10" width="40" height="80" fill="#6b5344" stroke="#3d2f25" stroke-width="2"/>
+                        <ellipse cx="150" cy="10" rx="20" ry="12" fill="#4a3d34"/>
+                        
+                        <!-- Main walls -->
+                        <rect x="50" y="90" width="200" height="180" fill="url(#houseGrad1)" stroke="#3d2f25" stroke-width="2"/>
+                        
+                        <!-- Door -->
+                        <rect x="120" y="220" width="60" height="100" fill="#3d3d3d" stroke="#1a1a1a" stroke-width="2"/>
+                        <circle cx="175" cy="275" r="4" fill="#c9a961"/>
+                        
+                        <!-- Left Window -->
+                        <rect x="70" y="130" width="50" height="50" fill="#87ceeb" stroke="#2a2a2a" stroke-width="2"/>
+                        <line x1="95" y1="130" x2="95" y2="180" stroke="#2a2a2a" stroke-width="1"/>
+                        <line x1="70" y1="155" x2="120" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+                        
+                        <!-- Right Window -->
+                        <rect x="180" y="130" width="50" height="50" fill="#87ceeb" stroke="#2a2a2a" stroke-width="2"/>
+                        <line x1="205" y1="130" x2="205" y2="180" stroke="#2a2a2a" stroke-width="1"/>
+                        <line x1="180" y1="155" x2="230" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+                        
+                        <!-- Foundation -->
+                        <rect x="45" y="270" width="210" height="60" fill="#4a3d34" stroke="#2a2a2a" stroke-width="2"/>
+                    </svg>
+                    <div class="house-info">
+                        <h3>Model 1</h3>
+                        <p>Water Safety Classifier</p>
+                    </div>
+                </div>
+                
+                <!-- House/Model 2 (Right) -->
+                <div class="house-button house-2" data-model="model_2">
+                    <svg class="house-svg" viewBox="0 0 300 350" preserveAspectRatio="xMidYMid meet">
+                        <defs>
+                            <linearGradient id="houseGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b6f47;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#5d4e37;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="roofGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#404040;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        
+                        <!-- Roof -->
+                        <polygon points="50,90 150,20 250,90" fill="url(#roofGrad2)"/>
+                        <polygon points="50,90 150,20 250,90" stroke="#0a0a0a" stroke-width="2" fill="none"/>
+                        
+                        <!-- Chimney -->
+                        <rect x="130" y="10" width="40" height="80" fill="#6b5344" stroke="#3d2f25" stroke-width="2"/>
+                        <ellipse cx="150" cy="10" rx="20" ry="12" fill="#4a3d34"/>
+                        
+                        <!-- Main walls -->
+                        <rect x="50" y="90" width="200" height="180" fill="url(#houseGrad2)" stroke="#3d2f25" stroke-width="2"/>
+                        
+                        <!-- Door -->
+                        <rect x="120" y="220" width="60" height="100" fill="#3d3d3d" stroke="#1a1a1a" stroke-width="2"/>
+                        <circle cx="175" cy="275" r="4" fill="#c9a961"/>
+                        
+                        <!-- Left Window -->
+                        <rect x="70" y="130" width="50" height="50" fill="#87ceeb" stroke="#2a2a2a" stroke-width="2"/>
+                        <line x1="95" y1="130" x2="95" y2="180" stroke="#2a2a2a" stroke-width="1"/>
+                        <line x1="70" y1="155" x2="120" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+                        
+                        <!-- Right Window -->
+                        <rect x="180" y="130" width="50" height="50" fill="#87ceeb" stroke="#2a2a2a" stroke-width="2"/>
+                        <line x1="205" y1="130" x2="205" y2="180" stroke="#2a2a2a" stroke-width="1"/>
+                        <line x1="180" y1="155" x2="230" y2="155" stroke="#2a2a2a" stroke-width="1"/>
+                        
+                        <!-- Foundation -->
+                        <rect x="45" y="270" width="210" height="60" fill="#4a3d34" stroke="#2a2a2a" stroke-width="2"/>
+                    </svg>
+                    <div class="house-info">
+                        <h3>Model 2</h3>
+                        <p>Water Quality Scorer</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: River Continues to Beach -->
+        <section class="river-beach-section" id="transition">
+            <svg class="transition-svg" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="beachGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#4a5f7f;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#6b8b5f;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#8b9070;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="sandGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#d4a574;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#c9964f;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="oceanGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#2a5a7a;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#1a3a5a;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Sky -->
+                <rect width="1920" height="400" fill="url(#beachGradient)"/>
+                
+                <!-- Sand -->
+                <rect y="400" width="1920" height="400" fill="url(#sandGradient)"/>
+                
+                <!-- Ocean -->
+                <rect y="800" width="1920" height="400" fill="url(#oceanGradient)"/>
+                
+                <!-- River flowing to beach -->
+                <path d="M 800,0 Q 900,200 950,400 Q 1000,500 960,700" 
+                      stroke="#1e5a96" stroke-width="100" fill="none" stroke-linecap="round"/>
+                
+                <!-- River shimmer -->
+                <path d="M 800,0 Q 900,200 950,400 Q 1000,500 960,700" 
+                      stroke="#4db8ff" stroke-width="30" fill="none" stroke-linecap="round" opacity="0.4"/>
+                
+                <!-- Ocean waves -->
+                <g opacity="0.7">
+                    <path d="M -100,800 Q 0,850 100,800 T 300,800 T 500,800 T 700,800 T 900,800 T 1100,800 T 1300,800 T 1500,800 T 1700,800 T 1900,800 T 2100,800" 
+                          stroke="#3a7aaa" stroke-width="20" fill="none" stroke-linecap="round"/>
+                    <path d="M -100,900 Q 0,950 100,900 T 300,900 T 500,900 T 700,900 T 900,900 T 1100,900 T 1300,900 T 1500,900 T 1700,900 T 1900,900 T 2100,900" 
+                          stroke="#2a6a9a" stroke-width="20" fill="none" stroke-linecap="round"/>
+                    <path d="M -100,1000 Q 0,1050 100,1000 T 300,1000 T 500,1000 T 700,1000 T 900,1000 T 1100,1000 T 1300,1000 T 1500,1000 T 1700,1000 T 1900,1000 T 2100,1000" 
+                          stroke="#1a5a8a" stroke-width="20" fill="none" stroke-linecap="round"/>
+                </g>
+            </svg>
+            
+            <div class="section-content">
+                <h2 class="section-title">Data Flow to Ocean of Insights</h2>
+                <p class="section-description">Watch as water quality data flows from multiple models through the prediction pipeline, merging into comprehensive marine insights</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Ocean & Analytics -->
+        <section class="ocean-section" id="analytics">
+            <svg class="ocean-svg" viewBox="0 0 1920 1200" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <radialGradient id="oceanDeepGradient" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#4a8abc;stop-opacity:0.9" />
+                        <stop offset="100%" style="stop-color:#1a3a5a;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <rect width="1920" height="1200" fill="url(#oceanDeepGradient)"/>
+                
+                <!-- Wave animations -->
+                <g class="waves" opacity="0.5">
+                    <path d="M 0,600 Q 240,550 480,600 T 960,600 T 1440,600 T 1920,600" 
+                          stroke="#5a9acc" stroke-width="30" fill="none" stroke-linecap="round"/>
+                    <path d="M 0,700 Q 240,650 480,700 T 960,700 T 1440,700 T 1920,700" 
+                          stroke="#4a8abc" stroke-width="30" fill="none" stroke-linecap="round"/>
+                    <path d="M 0,800 Q 240,750 480,800 T 960,800 T 1440,800 T 1920,800" 
+                          stroke="#3a7aac" stroke-width="30" fill="none" stroke-linecap="round"/>
+                </g>
+            </svg>
+            
+            <div class="ocean-content">
+                <h2 class="section-title">Real-Time Water Intelligence</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                                <circle cx="50" cy="50" r="40" fill="none" stroke="#4db8ff" stroke-width="3"/>
+                                <path d="M 50,20 L 50,80 M 20,50 L 80,50" stroke="#4db8ff" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>pH Level Prediction</h3>
+                        <p>Advanced acid-base balance analysis</p>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                                <rect x="20" y="30" width="60" height="50" fill="none" stroke="#6eccff" stroke-width="3"/>
+                                <line x1="35" y1="65" x2="35" y2="50" stroke="#6eccff" stroke-width="2"/>
+                                <line x1="50" y1="65" x2="50" y2="35" stroke="#6eccff" stroke-width="2"/>
+                                <line x1="65" y1="65" x2="65" y2="45" stroke="#6eccff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Contamination Detection</h3>
+                        <p>Real-time pollutant identification</p>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                                <path d="M 20,70 L 40,40 L 60,55 L 80,25" fill="none" stroke="#8fddff" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="20" cy="70" r="4" fill="#8fddff"/>
+                                <circle cx="40" cy="40" r="4" fill="#8fddff"/>
+                                <circle cx="60" cy="55" r="4" fill="#8fddff"/>
+                                <circle cx="80" cy="25" r="4" fill="#8fddff"/>
+                            </svg>
+                        </div>
+                        <h3>Quality Trends</h3>
+                        <p>Long-term pattern analysis</p>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="#a8edff" stroke-width="3"/>
+                                <path d="M 50,50 L 65,35" stroke="#a8edff" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="50" cy="50" r="3" fill="#a8edff"/>
+                            </svg>
+                        </div>
+                        <h3>Risk Assessment</h3>
+                        <p>Safety threshold evaluation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Call to Action / Bottom -->
+        <section class="cta-section" id="cta">
+            <svg class="deep-ocean-svg" viewBox="0 0 1920 800" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <radialGradient id="deepOcean" cx="50%" cy="30%">
+                        <stop offset="0%" style="stop-color:#2a5a7a;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#0a1a3a;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <rect width="1920" height="800" fill="url(#deepOcean)"/>
+                
+                <!-- Deep ocean particles -->
+                <g opacity="0.3">
+                    <circle cx="300" cy="200" r="3" fill="#4db8ff"/>
+                    <circle cx="800" cy="400" r="2" fill="#6eccff"/>
+                    <circle cx="1200" cy="150" r="2.5" fill="#4db8ff"/>
+                    <circle cx="1600" cy="350" r="3" fill="#6eccff"/>
+                    <circle cx="500" cy="600" r="2" fill="#4db8ff"/>
+                    <circle cx="1400" cy="700" r="2.5" fill="#6eccff"/>
+                </g>
+            </svg>
+            
+            <div class="cta-content">
+                <h2>Ready to Understand Water's Future?</h2>
+                <p>Start exploring real-time water quality predictions powered by advanced machine learning</p>
+                <button class="cta-button" onclick="navigateToDashboard()">Explore Models</button>
+                <button class="cta-button secondary" onclick="navigateToDocumentation()">View Documentation</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

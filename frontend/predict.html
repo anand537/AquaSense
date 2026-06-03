@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaSense Prediction</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/predict.css">
+</head>
+<body>
+    <div class="predict-shell">
+        <header class="predict-header">
+            <a class="back-link" href="index.html">← Back to AquaSense</a>
+            <h1>AquaSense Water Prediction</h1>
+            <p>Enter water sample values and get a safety verdict, quality score, and recommended next steps.</p>
+        </header>
+
+        <main class="predict-main">
+            <section class="predict-form-card">
+                <h2>Water Sample Input</h2>
+                <form id="waterForm">
+                    <div class="input-grid">
+                        <label>
+                            pH
+                            <input type="number" step="0.1" min="0" max="14" name="ph" required placeholder="7.2">
+                        </label>
+                        <label>
+                            Hardness
+                            <input type="number" step="1" min="0" name="Hardness" required placeholder="150">
+                        </label>
+                        <label>
+                            Solids
+                            <input type="number" step="1" min="0" name="Solids" required placeholder="400">
+                        </label>
+                        <label>
+                            Chloramines
+                            <input type="number" step="0.1" min="0" name="Chloramines" required placeholder="2.5">
+                        </label>
+                        <label>
+                            Sulfate
+                            <input type="number" step="1" min="0" name="Sulfate" required placeholder="300">
+                        </label>
+                        <label>
+                            Conductivity
+                            <input type="number" step="1" min="0" name="Conductivity" required placeholder="450">
+                        </label>
+                        <label>
+                            Organic Carbon
+                            <input type="number" step="0.1" min="0" name="Organic_carbon" required placeholder="10">
+                        </label>
+                        <label>
+                            Trihalomethanes
+                            <input type="number" step="0.1" min="0" name="Trihalomethanes" required placeholder="50">
+                        </label>
+                        <label>
+                            Turbidity
+                            <input type="number" step="0.1" min="0" name="Turbidity" required placeholder="1.5">
+                        </label>
+                    </div>
+                    <button type="submit" class="predict-button">Predict Water Quality</button>
+                </form>
+            </section>
+
+            <section class="predict-result-card" id="resultCard" hidden>
+                <h2>Prediction Result</h2>
+                <div class="result-grid">
+                    <div class="result-panel">
+                        <span class="label">Safety</span>
+                        <strong id="resultSafety"></strong>
+                        <span id="resultProbability" class="meta"></span>
+                    </div>
+                    <div class="result-panel">
+                        <span class="label">Quality Score</span>
+                        <strong id="resultScore"></strong>
+                    </div>
+                    <div class="result-panel">
+                        <span class="label">Water Profile</span>
+                        <strong id="resultProfile"></strong>
+                    </div>
+                    <div class="result-panel full-width">
+                        <span class="label">Recommendation</span>
+                        <p id="resultRecommendation"></p>
+                    </div>
+                    <div class="result-panel full-width">
+                        <span class="label">Explanation</span>
+                        <ul id="resultExplanation"></ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="predict-note-card">
+                <h3>Need help?</h3>
+                <p>If your browser is opened directly from the file system, the prediction request may fail. Run the backend with <code>uvicorn backend.main:app --reload</code> and open <code>http://127.0.0.1:8000/predict.html</code>.</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts/predict.js"></script>
+</body>
+</html>

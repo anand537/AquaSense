@@ -1,0 +1,495 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d1620;
+    color: #e0e0e0;
+    overflow-x: hidden;
+}
+
+.scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+/* ===== HERO SECTION ===== */
+.hero-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.background-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    animation: fadeInDown 1s ease-out 0.3s both;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #4db8ff, #6eccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 0 30px rgba(77, 184, 255, 0.3));
+}
+
+.hero-tagline {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: #a8edff;
+    text-transform: uppercase;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #8fddff;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* ===== RIVER VALLEY SECTION ===== */
+.river-valley-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 150vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.valley-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.valley-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.models-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1400px;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 60px;
+    text-align: center;
+    background: linear-gradient(135deg, #6eccff, #4db8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.models-container > div:last-of-type {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    width: 100%;
+    max-width: 1000px;
+    align-items: center;
+}
+
+.house-button {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    perspective: 1000px;
+}
+
+.house-button:hover {
+    transform: translateY(-30px) scale(1.1);
+}
+
+.house-button:hover .house-svg {
+    filter: drop-shadow(0 20px 40px rgba(77, 184, 255, 0.4));
+}
+
+.house-svg {
+    width: 200px;
+    height: 250px;
+    transition: filter 0.4s ease-out;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
+.house-info {
+    text-align: center;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.house-info h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: #6eccff;
+}
+
+.house-info p {
+    font-size: 0.95rem;
+    color: #8fddff;
+    letter-spacing: 0.5px;
+}
+
+.house-button:hover .house-info {
+    opacity: 1;
+}
+
+/* ===== RIVER TO BEACH TRANSITION ===== */
+.river-beach-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.transition-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.section-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #8fddff;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* ===== OCEAN & ANALYTICS SECTION ===== */
+.ocean-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 120vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.ocean-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.ocean-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1300px;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.analytics-card {
+    background: rgba(42, 90, 122, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(77, 184, 255, 0.3);
+    border-radius: 12px;
+    padding: 40px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.analytics-card:nth-child(1) { animation-delay: 0.1s; }
+.analytics-card:nth-child(2) { animation-delay: 0.2s; }
+.analytics-card:nth-child(3) { animation-delay: 0.3s; }
+.analytics-card:nth-child(4) { animation-delay: 0.4s; }
+
+.analytics-card:hover {
+    background: rgba(42, 90, 122, 0.5);
+    border-color: rgba(77, 184, 255, 0.6);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(77, 184, 255, 0.2);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.card-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.analytics-card:hover .card-icon {
+    opacity: 1;
+    filter: drop-shadow(0 0 15px rgba(77, 184, 255, 0.4));
+}
+
+.analytics-card h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    color: #6eccff;
+}
+
+.analytics-card p {
+    font-size: 0.95rem;
+    color: #8fddff;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* ===== CTA SECTION ===== */
+.cta-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.deep-ocean-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 800px;
+    padding: 40px;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.cta-content h2 {
+    font-size: 2.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    background: linear-gradient(135deg, #4db8ff, #6eccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #8fddff;
+    margin-bottom: 50px;
+    line-height: 1.8;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    margin: 0 15px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 2px solid #4db8ff;
+    background: linear-gradient(135deg, #1e5a96, #2a7fb5);
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(77, 184, 255, 0.2);
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #2a7fb5, #3a9fc5);
+    border-color: #6eccff;
+    box-shadow: 0 15px 40px rgba(77, 184, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border-color: #6eccff;
+    color: #6eccff;
+}
+
+.cta-button.secondary:hover {
+    background: rgba(77, 184, 255, 0.1);
+    border-color: #8fddff;
+    color: #8fddff;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.5rem;
+        letter-spacing: 6px;
+    }
+    
+    .hero-tagline {
+        font-size: 1.4rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .models-container > div:last-of-type {
+        grid-template-columns: 1fr;
+        gap: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    
+    .hero-tagline {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .house-svg {
+        width: 150px;
+        height: 200px;
+    }
+    
+    .analytics-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-button {
+        padding: 14px 30px;
+        font-size: 0.9rem;
+        margin: 10px 10px;
+    }
+}
+
+/* ===== SCROLL BAR STYLING ===== */
+.scroll-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: rgba(13, 22, 32, 0.8);
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4db8ff, #2a7fb5);
+    border-radius: 5px;
+    border: 2px solid rgba(13, 22, 32, 0.8);
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #6eccff, #3a9fc5);
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

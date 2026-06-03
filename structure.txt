@@ -1,0 +1,10 @@
+
+Stucture for Aquasence
+
+/ml_models (Saved .json or .pkl files)
+
+/backend (FastAPI code)
+
+/frontend (React/Next.js code)
+
+/notebooks (For your EDA and training experiments)

@@ -1,0 +1,374 @@
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-50px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(50px, 0, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(77, 184, 255, 0.5),
+                     0 0 20px rgba(77, 184, 255, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(77, 184, 255, 0.8),
+                     0 0 30px rgba(77, 184, 255, 0.5),
+                     0 0 40px rgba(77, 184, 255, 0.3);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, -10px, 0);
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        d: path("M 0,600 Q 240,550 480,600 T 960,600 T 1440,600 T 1920,600");
+    }
+    50% {
+        d: path("M 0,600 Q 240,570 480,600 T 960,600 T 1440,600 T 1920,600");
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes riverFlow {
+    0%, 100% {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dashoffset: 50px;
+    }
+}
+
+@keyframes bubbleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-400px);
+    }
+}
+
+/* ===== APPLY ANIMATIONS ===== */
+
+.hero-title {
+    animation: glow 3s ease-in-out infinite;
+}
+
+.waves {
+    animation: wave 4s ease-in-out infinite;
+}
+
+.house-button {
+    animation: slideInUp 0.6s ease-out forwards;
+}
+
+.house-button:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.house-button:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.analytics-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.analytics-card:hover {
+    animation: pulse 2s ease-in-out;
+}
+
+/* ===== PARALLAX EFFECT ===== */
+.background-sky {
+    animation: float 8s ease-in-out infinite;
+}
+
+.valley-background {
+    animation: float 6s ease-in-out infinite 0.3s;
+}
+
+.ocean-svg {
+    animation: float 10s ease-in-out infinite 0.6s;
+}
+
+/* ===== WAVE ANIMATION ===== */
+@keyframes waveMove {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(1920px);
+    }
+}
+
+.waves {
+    animation: waveMove 15s linear infinite;
+}
+
+/* ===== INTERACTIVE FOCUS STATES ===== */
+button:focus-visible {
+    outline: 2px solid #6eccff;
+    outline-offset: 3px;
+}
+
+.house-button:focus-visible {
+    outline: 2px solid #4db8ff;
+    outline-offset: 5px;
+    border-radius: 4px;
+}
+
+/* ===== SMOOTH TRANSITIONS FOR STATE CHANGES ===== */
+a, button, [role="button"] {
+    transition: all 0.3s ease;
+}
+
+input, textarea, select {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== TIMING FUNCTIONS ===== */
+:root {
+    --ease-in-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-in: cubic-bezier(0.42, 0, 1, 1);
+}
+
+/* ===== STAGGERED ANIMATIONS ===== */
+.analytics-grid .analytics-card {
+    animation: fadeInUp 0.8s ease-out var(--animation-delay, 0s) both;
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.reveal {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.reveal.active {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* ===== GRADIENT ANIMATIONS ===== */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    animation: gradientShift 6s ease infinite;
+    background-size: 200% 200%;
+}
+
+/* ===== SPECIFIC ELEMENT ANIMATIONS ===== */
+
+/* Houses on hover with 3D effect */
+.house-button {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.house-button:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) translateY(-30px) scale(1.1);
+}
+
+/* Cards with glow effect on hover */
+.analytics-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.analytics-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(77, 184, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.analytics-card:hover::before {
+    opacity: 1;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===== BOUNCE ANIMATION FOR CTA BUTTONS ===== */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.cta-button {
+    animation: none;
+}
+
+.cta-button:hover {
+    animation: bounce 0.6s ease-in-out;
+}
+
+/* ===== MOBILE ANIMATIONS ===== */
+@media (max-width: 768px) {
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -20px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+    
+    .house-button:hover {
+        transform: translateY(-15px) scale(1.05);
+    }
+    
+    .analytics-card:hover {
+        transform: translateY(-5px) scale(1.01);
+    }
+}
+
+/* ===== PREFERS REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

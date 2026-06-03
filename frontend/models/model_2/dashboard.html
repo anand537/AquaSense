@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model 2 Dashboard - AquaSense</title>
+    <link rel="stylesheet" href="../../styles/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="nav-left">
+                <a href="../../index.html" class="back-button">
+                    <span class="arrow">←</span> Back to AquaSense
+                </a>
+            </div>
+            <div class="nav-center">
+                <h1 class="nav-title">Water Quality Prediction Model</h1>
+            </div>
+            <div class="nav-right">
+                <span class="model-badge" id="modelBadge">Model 2</span>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Header Section -->
+            <section class="dashboard-header">
+                <div class="header-content">
+                    <h2 id="modelTitle">Water Quality Scorer</h2>
+                    <p id="modelDescription">Regression-based model for continuous water quality scoring</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-card">
+                        <div class="stat-value">R² = 0.912</div>
+                        <div class="stat-label">Model Performance</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">1.8M</div>
+                        <div class="stat-label">Samples Analyzed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">15/7</div>
+                        <div class="stat-label">Active Monitoring</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs Section -->
+            <section class="dashboard-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="overview">Overview</button>
+                    <button class="tab-button" data-tab="metrics">Metrics</button>
+                    <button class="tab-button" data-tab="predictions">Predictions</button>
+                    <button class="tab-button" data-tab="settings">Settings</button>
+                </div>
+
+                <!-- Tab Content: Overview -->
+                <div class="tab-content active" id="overview">
+                    <div class="content-grid">
+                        <div class="info-card">
+                            <h3>Model Information</h3>
+                            <p><strong>Type:</strong> Regression Analysis</p>
+                            <p><strong>Algorithm:</strong> XGBoost + Neural Network Ensemble</p>
+                            <p><strong>Training Data:</strong> 1.8M water samples</p>
+                            <p><strong>Features:</strong> 18 water quality parameters</p>
+                            <p><strong>Last Updated:</strong> April 28, 2026</p>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>Performance Metrics</h3>
+                            <p><strong>Mean Absolute Error:</strong> 0.82</p>
+                            <p><strong>Root Mean Squared Error:</strong> 1.15</p>
+                            <p><strong>R-squared (R²):</strong> 0.912</p>
+                            <p><strong>Correlation:</strong> 0.956</p>
+                            <p><strong>Response Time:</strong> 52ms</p>
+                        </div>
+                    </div>
+
+                    <div class="features-list">
+                        <h3>Scoring Parameters</h3>
+                        <ul>
+                            <li>pH Level</li>
+                            <li>Dissolved Oxygen (DO)</li>
+                            <li>Turbidity</li>
+                            <li>Temperature</li>
+                            <li>Conductivity</li>
+                            <li>Total Dissolved Solids (TDS)</li>
+                            <li>Hardness</li>
+                            <li>Chloride</li>
+                            <li>Sulfate</li>
+                            <li>Phosphate</li>
+                            <li>Nitrate</li>
+                            <li>Iron</li>
+                            <li>Manganese</li>
+                            <li>Copper</li>
+                            <li>Lead</li>
+                            <li>Zinc</li>
+                            <li>Alkalinity</li>
+                            <li>Acidity</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Metrics -->
+                <div class="tab-content" id="metrics">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-title">Score Distribution</div>
+                            <div class="metric-placeholder">
+                                <canvas id="distributionChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-title">Feature Importance</div>
+                            <div class="metric-placeholder">
+                                <canvas id="importanceChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-title">Prediction vs Actual</div>
+                            <div class="metric-placeholder">
+                                <canvas id="predictionChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="metric-card">
+                            <div class="metric-title">Residual Analysis</div>
+                            <div class="metric-placeholder">
+                                <canvas id="residualChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Predictions -->
+                <div class="tab-content" id="predictions">
+                    <div class="prediction-input">
+                        <h3>Score Prediction</h3>
+                        <form id="predictionForm">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="ph">pH Level (0-14)</label>
+                                    <input type="number" id="ph" name="ph" min="0" max="14" step="0.1" placeholder="7.0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="do">Dissolved Oxygen (mg/L)</label>
+                                    <input type="number" id="do" name="do" min="0" step="0.1" placeholder="8.0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="temperature">Temperature (°C)</label>
+                                    <input type="number" id="temperature" name="temperature" min="-5" max="50" step="0.1" placeholder="20">
+                                </div>
+                                <div class="form-group">
+                                    <label for="conductivity">Conductivity (µS/cm)</label>
+                                    <input type="number" id="conductivity" name="conductivity" min="0" step="1" placeholder="500">
+                                </div>
+                                <div class="form-group">
+                                    <label for="turbidity">Turbidity (NTU)</label>
+                                    <input type="number" id="turbidity" name="turbidity" min="0" step="0.1" placeholder="1.0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="tds">Total Dissolved Solids (mg/L)</label>
+                                    <input type="number" id="tds" name="tds" min="0" step="1" placeholder="250">
+                                </div>
+                            </div>
+                            <button type="submit" class="predict-button">Calculate Score</button>
+                        </form>
+                    </div>
+
+                    <div class="prediction-result" id="predictionResult" style="display: none;">
+                        <h3>Calculated Quality Score</h3>
+                        <div class="result-box">
+                            <div class="result-score" id="resultScore">0.0</div>
+                            <div class="score-scale">
+                                <div class="scale-item">
+                                    <span class="scale-label">Poor</span>
+                                    <span class="scale-value">0.0</span>
+                                </div>
+                                <div class="scale-item">
+                                    <span class="scale-label">Fair</span>
+                                    <span class="scale-value">2.5</span>
+                                </div>
+                                <div class="scale-item">
+                                    <span class="scale-label">Good</span>
+                                    <span class="scale-value">5.0</span>
+                                </div>
+                                <div class="scale-item">
+                                    <span class="scale-label">Excellent</span>
+                                    <span class="scale-value">7.5-10.0</span>
+                                </div>
+                            </div>
+                            <div class="result-details" id="resultDetails"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Settings -->
+                <div class="tab-content" id="settings">
+                    <div class="settings-grid">
+                        <div class="setting-card">
+                            <h3>Scoring Configuration</h3>
+                            <div class="setting-item">
+                                <label for="scalingMethod">Scaling Method</label>
+                                <select id="scalingMethod">
+                                    <option value="linear" selected>Linear (0-10)</option>
+                                    <option value="logarithmic">Logarithmic</option>
+                                    <option value="weighted">Weighted Average</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label for="updateFreq">Update Frequency</label>
+                                <select id="updateFreq">
+                                    <option value="hourly" selected>Every Hour</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="setting-card">
+                            <h3>Quality Thresholds</h3>
+                            <div class="setting-item">
+                                <label for="poorThreshold">Poor Threshold</label>
+                                <input type="number" id="poorThreshold" min="0" max="10" step="0.1" value="2.5">
+                            </div>
+                            <div class="setting-item">
+                                <label for="fairThreshold">Fair Threshold</label>
+                                <input type="number" id="fairThreshold" min="0" max="10" step="0.1" value="5.0">
+                            </div>
+                            <div class="setting-item">
+                                <label for="goodThreshold">Good Threshold</label>
+                                <input type="number" id="goodThreshold" min="0" max="10" step="0.1" value="7.5">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="dashboard-footer">
+                <p>&copy; 2026 AquaSense - Understanding the Future of Water</p>
+                <div class="footer-links">
+                    <a href="../../index.html">Home</a>
+                    <a href="#settings">Settings</a>
+                    <a href="https://docs.aquasense.local">Documentation</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="../../scripts/dashboard.js"></script>
+</body>
+</html>
